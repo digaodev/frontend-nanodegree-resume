@@ -208,20 +208,20 @@ education.display();
 
 function inName(name) {
   console.log(name);
-    var firstName = "";
-    var secondName = "";
-    var nameArray = name.split(" ");
-    firstName = nameArray[0].toLowerCase();
-    secondName = nameArray[1].toUpperCase();
-    for (var i = 0; i < firstName.length; i++) {
-        if (i === 0) {
-            firstNameTemp = firstName.charAt(i).toUpperCase();
-        } else {
-            firstNameTemp += firstName.charAt(i);
-        }
+  var firstName = "";
+  var secondName = "";
+  var nameArray = name.split(" ");
+  firstName = nameArray[0].toLowerCase();
+  secondName = nameArray[1].toUpperCase();
+  for (var i = 0; i < firstName.length; i++) {
+    if (i === 0) {
+      firstNameTemp = firstName.charAt(i).toUpperCase();
+    } else {
+      firstNameTemp += firstName.charAt(i);
     }
-    var nameFormated = firstNameTemp + " " + secondName;
-    return nameFormated;
+  }
+  var nameFormated = firstNameTemp + " " + secondName;
+  return nameFormated;
 }
 
 /* INTERNATIONALIZE NAME SECTION */
