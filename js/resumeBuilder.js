@@ -1,5 +1,5 @@
 var bio = {
-  name: "Rodrigo RB",
+  name: "Rodrigo Ribeiro",
   role: "Web Developer",
   contacts: {
     mobile: "444-4444",
@@ -206,8 +206,26 @@ work.display();
 projects.display();
 education.display();
 
+function inName(name) {
+  console.log(name);
+    var firstName = "";
+    var secondName = "";
+    var nameArray = name.split(" ");
+    firstName = nameArray[0].toLowerCase();
+    secondName = nameArray[1].toUpperCase();
+    for (var i = 0; i < firstName.length; i++) {
+        if (i === 0) {
+            firstNameTemp = firstName.charAt(i).toUpperCase();
+        } else {
+            firstNameTemp += firstName.charAt(i);
+        }
+    }
+    var nameFormated = firstNameTemp + " " + secondName;
+    return nameFormated;
+}
+
 /* INTERNATIONALIZE NAME SECTION */
-// $("#header").append(internationalizeButton);
+$("#header").append(internationalizeButton);
 
 function inName() {
   return bio.name.split(" ")[0] + " " + bio.name.split(" ")[1].toUpperCase();
