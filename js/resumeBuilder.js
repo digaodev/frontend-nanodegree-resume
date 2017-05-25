@@ -177,7 +177,7 @@ var projects = {
       title: "News app",
       dates: "01-02-2017",
       description: "A news app to stay up-to-date",
-      images: ["images/news-home-375w.jpg"]
+      images: ["images/news-home-375w.jpg", "images/news-home-375w.jpg"]
     }
   ],
   display: function () {
@@ -190,13 +190,18 @@ var projects = {
       formattedSProjectTitle = HTMLprojectTitle.replace("%data%", project.title);
       formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
       formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
-      formattedProjectImage = HTMLprojectImage.replace("%data%", project.images[0]);
+
+      // formattedProjectImage = HTMLprojectImage.replace("%data%", project.images[0]);
 
       $("#projects").append(HTMLprojectStart);
       $(".project-entry:last").append(formattedSProjectTitle);
       $(".project-entry:last").append(formattedProjectDates);
       $(".project-entry:last").append(formattedProjectDescription);
-      $(".project-entry:last").append(formattedProjectImage);
+
+      project.images.forEach(function (image) {
+        formattedProjectImage = HTMLprojectImage.replace("%data%", image);
+        $(".project-entry:last").append(formattedProjectImage);
+      });
     });
   }
 };
